@@ -1,0 +1,18 @@
+<div class="col-md-12 block-center" style="background: #052B33; border-radius: 0px 10px 10px 0px;">
+  <center>
+    <div class="card-title text-white">
+      <h2>Proyecto Test Api Chistes</h2>
+    </div>
+  </center>
+  <div class="d-flex">
+  <div class="p-2">
+      <%= button_to('Consultar Api-Jokes', '/jokes/show_jokes_api', method: :get,  :class => "btn btn-info")%>
+  </div>
+  <div class="p-2">
+      <%= button_to('Consultar Mis Jokes', '/jokes/show_my_jokes', method: :get,  :class => "btn btn-info")%>
+  </div>
+    <div class="p-2">
+      <%= button_to('Cerrar sesión', destroy_user_session_path, method: :delete,  :class => "btn btn-warning")%>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<%= render partial: "jokes/top" %>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<div class="d-flex">
+  <div class="d-flex">
+    <% @jokes.each do |user_joke|%>
+    <div class="p-2">
+      <% joke = joke_api(user_joke.id_api_jokes) %>
+      <div class="form-group">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="<%= joke["icon_url"] %>" >
+          <div class="card-body">
+            <h5 class="card-title">Categoria: <%= joke["categories"].first%></h5>
+            <p class="card-text"><%= joke["value"]%></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Fecha: <%= DateTime.parse(joke["created_at"] + " -0500").strftime("%Y/%m/%d - %H:%M:%S")%></li>
+            <li class="list-group-item">Url: <a href="<%= joke["url"]%>"> link_url </a> </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <%end%>
+  </div>
+</div>
+
