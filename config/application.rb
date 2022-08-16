@@ -18,5 +18,12 @@ module ProjectJokes
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.time_zone = 'America/Bogota'
+    config.active_record.default_timezone = :local
+    # precompile vendor assets
+    config.assets.precompile += %w( base.js )
+    config.assets.precompile += %w( base.css )
+    config.assets.precompile += %w( jokes.css )
+    config.assets.precompile += %w( jokes.js )
   end
 end
